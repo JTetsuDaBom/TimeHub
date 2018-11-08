@@ -1,0 +1,10 @@
+name: TimeHub
+main: TimeHub\Main
+api: [1.3.0, 1.3.1, 1.4.0]
+author: MegaTheDev
+description: "a plugin which has a countdown sequence when u  enter the command"
+
+commands:
+ thub:
+  permission: thub.use
+  description: "use this command to initiate countdown sequence"
