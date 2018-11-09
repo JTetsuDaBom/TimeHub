@@ -1,4 +1,6 @@
 <?php
+namesapce Thub;
+
 use pocketmine\Server;
 use pocketmine\Player;
 use pocketmine\utils\Config;
