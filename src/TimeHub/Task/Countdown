@@ -8,5 +8,11 @@ use pocketmine\level\Level;
 use Timehub\Main;
 
 class Countdown extends Task{
-
+ 
+ public $seconds;
+ private $player;
+ private $plugin;
+ 
+ public function __construct(Main $plugin, Player $player){
+ }
 }
