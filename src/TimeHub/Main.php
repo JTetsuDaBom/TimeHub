@@ -13,9 +13,21 @@ class Main extends PluginBase implements Listener{
     $this->getLogger()->info("T-Hub plugin enabled made by MegaTheDev");
   }
   public function onDisable(){
-    $this->getLogger()->info('T-Hub disabled restart the server to enable the plugin");
+    $this->getLogger()->info("plugin has been disabled");
   }
-  public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args){
-  
+  public function onCommand(CommandSender $sender, Command $cmd, string $label, array $args) : bool {
+    switch(strtolower($cmd->getName())){
+      case "thub":
+        if(!$sender instanceof Player){
+          $sender->sendMessage("please use this command in game");
+          return false;
+        }
+        if(!$sender->hasPermission("thub.use")){
+          $sender->sendMessage("You do not have permission to use this command");
+          return false;
+        }
+        $this->getScheduler()->scheduleRepeatingTask(new Countdown($this, $sender), 20);
+    }
+    return true;
   }
 }
